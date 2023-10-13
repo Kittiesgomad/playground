@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "c835affd-8e37-43bf-93c7-cb024d41e986",
+		"name": "Play site management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7302601"
+	},
+	"item": [
+		{
+			"name": "Get kids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/kids",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get play site by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/play-site/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"play-site",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all play sites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/play-site",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"play-site"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create play site",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"equipment\": [\"slide\", \"double swing\",  \"carousel\", \"slide\", \"double swing\", \"ball pit\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/play-site",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"play-site"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create play site | bad request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"equipment\": [\"double swing\", \"slide\", \"carousel\", \"slide\", \"some-unknown-equipment\", \"ball pit\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/play-site",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"play-site"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign kid to play site",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"equipment\": [\"double swing\", \"slide\", \"carousel\", \"slide\", \"some-unknown-equipment\", \"ball pit\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/play-site/1/assign-kid/5030bfcf",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"play-site",
+						"1",
+						"assign-kid",
+						"5030bfcf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove kid to play site Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"equipment\": [\"double swing\", \"slide\", \"carousel\", \"slide\", \"some-unknown-equipment\", \"ball pit\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/play-site/1/remove-kid/0a93de85",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"play-site",
+						"1",
+						"remove-kid",
+						"0a93de85"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
